@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Now | Sonia's Salon & Spa — Winnipeg, MB</title>
+    <meta name="description"
+        content="Book nails, facials, lashes & more at Sonia's Salon & Spa in Winnipeg. Online booking. 205 Lucas Ave #122. Call (431) 977-1222.">
+    <!-- Preconnect for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="canonical" href="https://www.soniabeautysalon.ca/book-now" />
+    <meta property="og:title" content="Book Now | Sonia's Salon & Spa — Winnipeg, MB">
+    <meta property="og:description" content="Book nails, facials, lashes & more at Sonia's Salon & Spa in Winnipeg.">
+    <meta property="og:image" content="https://soniabeautysalon.ca/assets/image/og-image.webp">
+    <meta property="og:url" content="https://soniabeautysalon.ca/book-now">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Book Now | Sonia's Salon & Spa — Winnipeg">
+    <meta name="twitter:image" content="https://soniabeautysalon.ca/assets/image/og-image.webp">
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="/assets/image/icon.webp" type="image/webp">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/assets/css/booking-style.css">
+
+    <!-- Stripe.js (Required for Payment Authorization) -->
+    <script src="https://js.stripe.com/v3/"></script>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L8GCNNDXYY"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-L8GCNNDXYY');
+    </script>
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BeautySalon",
+  "name": "Sonia's Salon & Spa",
+  "image": "https://soniabeautysalon.ca/assets/image/logo.webp",
+  "url": "https://soniabeautysalon.ca",
+  "telephone": "+14319771222",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "205 Lucas Ave #122",
+    "addressLocality": "Winnipeg",
+    "addressRegion": "MB",
+    "postalCode": "R2R 2S9",
+    "addressCountry": "CA"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 49.9,
+    "longitude": -97.1
+  },
+  "openingHours": "Mo-Su 11:00-20:00",
+  "priceRange": "$$",
+  "servedCuisine": "Beauty Services"
+}
+</script>
+</head>
+
+<body>
+
+    <div id="luxuryLoader" class="luxury-loader">
+        <div class="loader-inner">
+            <div class="logo-pulse">
+                <img src="/assets/image/logowehite.webp" alt="Sonia's" class="pulse-logo">
+                <div class="pulse-ring"></div>
+            </div>
+            <div class="loader-text">
+                <span class="brand-name">SONIA'S</span>
+                <div class="loader-bar">
+                    <div class="loader-progress"></div>
+                </div>
+                <span class="loader-subtitle">Preparing Your Experience</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- APP CONTAINER -->
+    <div class="app-shell">
+
+        <!-- LEFT PANEL: INTERACTION -->
+        <main class="interaction-panel">
+            <!-- Header -->
+            <header class="app-header">
+                <div class="brand-logo">
+                    <span class="brand-text">SONIA'S</span>
+                </div>
+                <div class="step-progress">
+                    <span class="step-indicator">
+                        <span class="step-dots">
+                            <i class="dot active"></i>
+                            <i class="dot"></i>
+                            <i class="dot"></i>
+                        </span>
+                        <span class="step-text">STEP <strong id="currentStep">1</strong> OF 3</span>
+                    </span>
+                </div>
+                <a href="/" class="close-app" aria-label="Back to Home">
+                    <i class="bi bi-x-lg"></i>
+                </a>
+            </header>
+
+            <!-- Scrollable Content -->
+            <div class="scroll-stage">
+                <div class="content-container">
+
+                    <!-- STEP 1: SERVICES -->
+                    <section id="step1" class="step-section active">
+                        <div class="step-intro">
+                            <span class="step-label">SELECT SERVICES</span>
+                            <h1 class="display-heading">Curate Your<br>Perfect Experience</h1>
+                        </div>
+
+                        <nav class="category-nav" id="categoryNav">
+                            <!-- JS Inject Categories -->
+                        </nav>
+
+                        <div class="services-container" id="servicesList">
+                            <!-- JS Inject Services -->
+                        </div>
+                    </section>
+
+                    <!-- STEP 2: DATE & TIME -->
+                    <section id="step2" class="step-section">
+                        <button class="back-btn" onclick="goToStep(1)">
+                            <i class="bi bi-arrow-left"></i> Back to Services
+                        </button>
+                        <div class="step-intro">
+                            <span class="step-label">SELECT DATE & TIME</span>
+                            <h2 class="display-heading">Find Your<br>Perfect Moment</h2>
+                        </div>
+
+                        <div class="calendar-wrapper">
+                            <div class="calendar-scroll" id="calendarDays">
+                                <!-- JS Inject Calendar -->
+                            </div>
+                        </div>
+                        <div class="time-section mt-5">
+                            <p class="timezone-notice">Times are shown in CDT.</p>
+                            <!-- ✅ FIXED — empty, JS will fill it -->
+                            <h4 class="section-subtitle" id="selectedDateDisplay"></h4>
+                            <div id="timeSlots">
+                                <!-- JS Inject buckets -->
+                            </div>
+                        </div>
+                    </section>
+
+                    <!-- STEP 3: CONTACT & CHECKOUT -->
+                    <section id="step3" class="step-section">
+                        <button class="back-btn" onclick="goToStep(2)">
+                            <i class="bi bi-arrow-left"></i> Back to Time
+                        </button>
+                        <div class="step-intro">
+                            <span class="step-label">CHECKOUT</span>
+                            <h2 class="display-heading">Appointment<br>Details</h2>
+                        </div>
+
+                        <form class="booking-form" id="contactForm">
+                            <!-- Cancellation Policy -->
+                            <div class="cancellation-policy">
+                                <i class="bi bi-clock-history"></i>
+                                <div>
+                                    <strong>Cancellation policy</strong><br>
+                                    Cancel before <span id="cancelDeadline">--</span><br>
+                                    <small class="text-muted">Please cancel or reschedule before the deadline to avoid
+                                        fees.</small>
+                                </div>
+                            </div>
+
+                            <!-- Contact Info -->
+                            <h4 class="section-subtitle mt-4">Contact info</h4>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label class="form-label">First name</label>
+                                    <input type="text" class="form-input" name="firstName" placeholder="John" required>
+                                </div>
+                                <div class="col-md-6">
+                                    <label class="form-label">Last name</label>
+                                    <input type="text" class="form-input" name="lastName" placeholder="Doe" required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Email</label>
+                                    <input type="email" class="form-input" name="email" placeholder="john@example.com"
+                                        required>
+                                </div>
+                                <div class="col-12">
+                                    <label class="form-label">Phone number</label>
+                                    <div class="phone-combined">
+                                        <span class="phone-prefix">+1</span>
+                                        <input type="tel" class="form-input phone-input-combined" name="phone"
+                                            placeholder="(000) 000-0000" required>
+                                    </div>
+                                </div>
+                                <div class="col-12 mt-2">
+                                    <label class="form-label">Appointment note <span
+                                            class="text-muted">(Optional)</span></label>
+                                    <textarea class="form-input" name="notes" rows="2"
+                                        placeholder="Special requests, allergies, etc..."></textarea>
+                                </div>
+                            </div>
+
+                            <!-- Payment Section (Shown only if total > $200) -->
+                            <div id="paymentSection" style="display: none;">
+                                <h4 class="section-subtitle mt-4">Secure Your Appointment</h4>
+                                <p class="text-muted small">Authorization required for bookings over CA$200. No charge
+                                    today.</p>
+                                <div class="stripe-card-wrapper form-input" style="padding: 0;">
+                                    <div id="card-element"></div>
+                                </div>
+                                <div id="card-errors" class="text-danger mt-2 small"></div>
+                            </div>
+
+                            <!-- Summary Summary -->
+                            <div class="appointment-summary-block mt-4">
+                                <h4 class="section-subtitle">Appointment summary</h4>
+                                <div id="appointmentSummaryDate" class="fw-bold mb-1"></div>
+                                <div id="appointmentSummaryTime" class="text-muted mb-3"></div>
+
+                                <div id="appointmentSummaryItems">
+                                    <!-- JS Inject Items -->
+                                </div>
+
+                                <div class="summary-totals mt-3">
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>Subtotal</span>
+                                        <span id="step3Subtotal">CA$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between mb-1">
+                                        <span>GST (5%)</span>
+                                        <span id="step3GST">CA$0.00</span>
+                                    </div>
+                                    <hr>
+                                    <div class="d-flex justify-content-between fw-bold fs-5">
+                                        <span>Total</span>
+                                        <span id="step3Total">CA$0.00</span>
+                                    </div>
+                                    <div class="d-flex justify-content-between text-muted small mt-2">
+                                        <span>Due at appointment</span>
+                                        <span id="step3DueAtAppt">CA$0.00</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+
+                        <button class="btn-primary-lux w-100 mt-4" id="step3BookBtn" onclick="handleMainAction()"
+                            disabled>
+                            Book Appointment
+                        </button>
+                        <p class="text-center small text-muted mt-3">Powered by Sonia's Beauty Salon & Spa</p>
+                    </section>
+
+                </div>
+            </div>
+        </main>
+
+        <!-- RIGHT PANEL: DESKTOP SUMMARY -->
+        <aside class="summary-panel">
+            <div class="summary-inner">
+                <div class="summary-header">
+                    <h2 class="summary-title">Your Booking</h2>
+                    <p class="summary-specialist">Sonia's Salon & Spa</p>
+                </div>
+
+                <div class="summary-items-wrapper">
+                    <div class="summary-items" id="summaryItems">
+                        <div class="empty-summary">
+                            <i class="bi bi-bag"></i>
+                            <p>No services selected</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="summary-footer">
+                    <div class="price-breakdown">
+                        <div class="price-row"><span>Subtotal</span><span id="subtotal">CA$0.00</span></div>
+                        <div class="price-row">
+                            <span>GST (5%)</span>
+                            <span id="gst">CA$0.00</span>
+                        </div>
+                        <div class="price-total"><span>Total</span><span id="total">CA$0.00</span></div>
+                    </div>
+                    <div class="duration-badge" id="durationBadge">
+                        <i class="bi bi-clock"></i> 0 min
+                    </div>
+                    <button class="btn-primary-lux" id="primaryActionBtn" onclick="handleMainAction()" disabled>
+                        Continue to Date & Time
+                    </button>
+                    <p class="summary-note"><i class="bi bi-shield-check"></i> Secure booking guaranteed</p>
+                </div>
+            </div>
+        </aside>
+
+    </div>
+
+    <!-- STAFF PICKER MODAL -->
+    <div class="luxury-modal-overlay" id="staffPickerModal">
+        <div class="luxury-modal staff-picker-modal">
+            <div class="modal-header-lux">
+                <h3 id="staffPickerTitle">Select Specialist</h3>
+                <button class="modal-close-btn" onclick="closeStaffPickerModal()">
+                    <i class="bi bi-x-lg"></i>
+                </button>
+            </div>
+            <div class="modal-body-lux" id="staffPickerContainer">
+                <!-- JS Inject Staff -->
+            </div>
+        </div>
+    </div>
+
+    <!-- SUCCESS MODAL -->
+    <div class="luxury-modal-overlay" id="successModal">
+        <div class="luxury-modal">
+            <div class="modal-icon">
+                <div class="success-checkmark">
+                    <div class="check-icon">
+                        <span class="icon-line line-tip"></span>
+                        <span class="icon-line line-long"></span>
+                        <div class="icon-circle"></div>
+                        <div class="icon-fix"></div>
+                    </div>
+                </div>
+            </div>
+            <h2 class="modal-title">Booking Confirmed!</h2>
+            <p class="modal-message">
+                Your luxury experience has been reserved.<br>
+                Confirmation sent to <strong id="confirmEmail"></strong>
+            </p>
+            <div class="booking-summary-modal">
+                <div class="summary-row-modal"><i class="bi bi-calendar3"></i><span id="confirmDate"></span></div>
+                <div class="summary-row-modal"><i class="bi bi-clock"></i><span id="confirmTime"></span></div>
+                <div class="summary-row-modal"><i class="bi bi-stars"></i><span id="confirmServices"></span></div>
+            </div>
+            <button class="btn-modal-close" onclick="window.location.href='/'">Return to Homepage</button>
+            <p class="modal-footer-note"><i class="bi bi-envelope"></i> Check your email for details</p>
+        </div>
+    </div>
+
+    <!-- MOBILE BOTTOM BAR -->
+    <div class="mobile-bottom-bar">
+        <div class="mobile-summary" onclick="toggleMobileDrawer()">
+            <div class="mobile-total" id="mobileTotal">CA$0.00</div>
+            <div class="mobile-count" id="mobileCount">0 services • 0 min</div>
+        </div>
+        <button class="btn-mobile-action" id="mobileActionBtn" onclick="handleMainAction()" disabled>
+            Continue
+        </button>
+    </div>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop" onclick="toggleMobileDrawer()"></div>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer" id="mobileDrawer">
+        <div class="drawer-handle" onclick="toggleMobileDrawer()"></div>
+        <div class="drawer-content">
+            <div class="drawer-header">
+                <h3>Your Booking</h3>
+                <button class="drawer-close" onclick="toggleMobileDrawer()"><i class="bi bi-x-lg"></i></button>
+            </div>
+            <div id="drawerItems">
+                <!-- Mirror of summary -->
+            </div>
+            <div class="summary-footer" style="margin-top:16px;">
+                <div class="price-breakdown">
+                    <div class="price-row"><span>Subtotal</span><span id="drawerSubtotal">CA$0.00</span></div>
+                    <div class="price-row"><span>GST (5%)</span><span id="drawerGst">CA$0.00</span></div>
+                    <div class="price-total"><span>Total</span><span id="drawerTotal">CA$0.00</span></div>
+                </div>
+                <div class="duration-badge" id="drawerDuration" style="margin-top:10px;">
+                    <i class="bi bi-clock"></i> 0 min
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Internal navigation footer — visible to crawlers, unobtrusive to users -->
+    <footer style="position:absolute;bottom:0;left:-9999px;font-size:0;" aria-hidden="true" tabindex="-1">
+        <a href="/" tabindex="-1">Home</a>
+        <a href="/about" tabindex="-1">About</a>
+        <a href="/gallery" tabindex="-1">Gallery</a>
+        <a href="/contact" tabindex="-1">Contact</a>
+    </footer>
+    <!-- Main JS -->
+    <script src="/assets/js/booking-logic.js"></script>
+</body>
+
+</html>

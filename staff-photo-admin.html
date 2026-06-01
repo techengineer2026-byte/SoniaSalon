@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Staff Photos — Sonia's Salon Admin</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=DM+Sans:wght@300;400;500&display=swap"
+        rel="stylesheet">
+    <style>
+        :root {
+            --rose: #b76e79;
+            --rose-light: #f5e6e8;
+            --rose-dark: #8a4f58;
+            --cream: #fdf8f6;
+            --charcoal: #2c2c2c;
+            --gray: #888;
+            --border: #e8ddd9;
+            --success: #4a9e7f;
+            --error: #c0392b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--cream);
+            color: var(--charcoal);
+            min-height: 100vh;
+        }
+
+        header {
+            background: var(--charcoal);
+            padding: 18px 40px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .brand {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            color: white;
+            font-weight: 300;
+            letter-spacing: 3px;
+        }
+
+        .admin-badge {
+            font-size: 11px;
+            color: var(--rose);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            border: 1px solid var(--rose);
+            padding: 4px 10px;
+            border-radius: 20px;
+        }
+
+        .page-wrap {
+            max-width: 780px;
+            margin: 0 auto;
+            padding: 48px 24px;
+        }
+
+        .page-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 38px;
+            font-weight: 300;
+            margin-bottom: 6px;
+            color: var(--charcoal);
+        }
+
+        .page-sub {
+            font-size: 14px;
+            color: var(--gray);
+            margin-bottom: 40px;
+        }
+
+        /* API Key setup box */
+        .setup-box {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 32px;
+        }
+
+        .setup-box h3 {
+            font-size: 13px;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            color: var(--rose);
+            margin-bottom: 14px;
+        }
+
+        .setup-row {
+            display: flex;
+            gap: 10px;
+            align-items: center;
+        }
+
+        .setup-row input {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 13px;
+            color: var(--charcoal);
+            background: var(--cream);
+        }
+
+        .setup-row input:focus {
+            outline: none;
+            border-color: var(--rose);
+        }
+
+        .btn-save-config {
+            padding: 10px 20px;
+            background: var(--charcoal);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            cursor: pointer;
+            font-family: 'DM Sans', sans-serif;
+            white-space: nowrap;
+            transition: background 0.2s;
+        }
+
+        .btn-save-config:hover {
+            background: var(--rose-dark);
+        }
+
+        .config-note {
+            font-size: 12px;
+            color: var(--gray);
+            margin-top: 10px;
+            line-height: 1.6;
+        }
+
+        /* Staff cards */
+        .staff-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .staff-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            padding: 24px;
+            display: flex;
+            align-items: center;
+            gap: 24px;
+            transition: box-shadow 0.2s;
+        }
+
+        .staff-card:hover {
+            box-shadow: 0 4px 20px rgba(183, 110, 121, 0.1);
+        }
+
+        .avatar-wrap {
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .avatar {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--rose-light);
+            display: block;
+        }
+
+        .avatar-fallback {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: var(--rose-light);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 26px;
+            color: var(--rose);
+            border: 3px solid var(--rose-light);
+        }
+
+        .avatar-edit-btn {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 26px;
+            height: 26px;
+            background: var(--rose);
+            border: 2px solid white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 11px;
+            color: white;
+            transition: background 0.2s;
+        }
+
+        .avatar-edit-btn:hover {
+            background: var(--rose-dark);
+        }
+
+        .staff-info {
+            flex: 1;
+        }
+
+        .staff-name {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 22px;
+            font-weight: 600;
+            margin-bottom: 3px;
+        }
+
+        .staff-role {
+            font-size: 13px;
+            color: var(--gray);
+            margin-bottom: 12px;
+        }
+
+        .url-display {
+            font-size: 11px;
+            color: var(--gray);
+            font-family: monospace;
+            background: var(--cream);
+            padding: 6px 10px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            word-break: break-all;
+            max-width: 420px;
+        }
+
+        .url-display.has-url {
+            color: var(--success);
+        }
+
+        .upload-area {
+            border: 2px dashed var(--border);
+            border-radius: 10px;
+            padding: 16px 20px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            margin-top: 12px;
+            background: var(--cream);
+        }
+
+        .upload-area:hover,
+        .upload-area.drag-over {
+            border-color: var(--rose);
+            background: var(--rose-light);
+        }
+
+        .upload-area p {
+            font-size: 13px;
+            color: var(--gray);
+            margin-top: 6px;
+        }
+
+        .upload-area .upload-icon {
+            font-size: 22px;
+        }
+
+        .file-input {
+            display: none;
+        }
+
+        .progress-bar-wrap {
+            height: 4px;
+            background: var(--border);
+            border-radius: 4px;
+            margin-top: 10px;
+            overflow: hidden;
+            display: none;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: var(--rose);
+            border-radius: 4px;
+            width: 0%;
+            transition: width 0.3s;
+        }
+
+        .status-msg {
+            font-size: 12px;
+            margin-top: 8px;
+            padding: 6px 10px;
+            border-radius: 6px;
+            display: none;
+        }
+
+        .status-msg.success {
+            background: #e8f5f0;
+            color: var(--success);
+            display: block;
+        }
+
+        .status-msg.error {
+            background: #fdf0ee;
+            color: var(--error);
+            display: block;
+        }
+
+        .status-msg.loading {
+            background: var(--rose-light);
+            color: var(--rose-dark);
+            display: block;
+        }
+
+        .btn-upload {
+            margin-top: 10px;
+            padding: 9px 18px;
+            background: var(--rose);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 13px;
+            font-family: 'DM Sans', sans-serif;
+            cursor: pointer;
+            transition: background 0.2s;
+            display: none;
+        }
+
+        .btn-upload:hover {
+            background: var(--rose-dark);
+        }
+
+        .btn-upload:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .preview-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            object-fit: cover;
+            margin: 8px auto 0;
+            display: none;
+            border: 2px solid var(--rose-light);
+        }
+
+        /* Instructions */
+        .instructions {
+            background: #fff9e6;
+            border: 1px solid #f0d080;
+            border-radius: 10px;
+            padding: 16px 20px;
+            margin-bottom: 28px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: #7a6020;
+        }
+
+        .instructions strong {
+            color: #5a4010;
+        }
+
+        footer {
+            text-align: center;
+            padding: 32px;
+            font-size: 12px;
+            color: var(--gray);
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="brand">SONIA'S</div>
+        <div class="admin-badge">Staff Admin</div>
+    </header>
+
+    <div class="page-wrap">
+        <h1 class="page-title">Staff Photos</h1>
+        <p class="page-sub">Upload photos for each team member. Photos save automatically to Google Sheets.</p>
+
+        <div class="instructions">
+            <strong>One-time setup required:</strong> Enter your Google Apps Script Web App URL below (the same URL used
+            for bookings). The script handles all the uploading — no Google Drive or tech knowledge needed.
+        </div>
+
+        <!-- Config -->
+        <div class="setup-box">
+            <h3>⚙ Apps Script URL</h3>
+            <div class="setup-row">
+                <input type="text" id="scriptUrl"
+                    placeholder="https://script.google.com/macros/s/YOUR_SCRIPT_ID/exec" />
+                <button class="btn-save-config" onclick="saveConfig()">Save</button>
+            </div>
+            <p class="config-note" id="configStatus">Enter your booking system's Apps Script URL above. It's the same
+                URL already in your booking-logic.js file.</p>
+        </div>
+
+        <!-- Staff Cards -->
+        <div class="staff-grid" id="staffGrid">
+            <p style="color:var(--gray); font-size:14px; text-align:center; padding:40px 0;">
+                Enter your Apps Script URL above and click Save to load staff.
+            </p>
+        </div>
+    </div>
+
+    <footer>Sonia's Salon & Spa — Admin Panel</footer>
+
+    <script>
+        const STORAGE_KEY = 'https://script.google.com/macros/s/AKfycbw-9qyDyPCKDBpsYxoFyhcH5vrArNdU-oM99VMfIGc6ey7BBrQ94UL1gJbRoT4IOwxnmQ/exec';
+
+        function saveConfig() {
+            const url = document.getElementById('scriptUrl').value.trim();
+            if (!url.includes('script.google.com')) {
+                showConfigStatus('Please enter a valid Apps Script URL', 'error');
+                return;
+            }
+            localStorage.setItem(STORAGE_KEY, url);
+            showConfigStatus('✓ Saved! Loading staff...', 'ok');
+            loadStaff(url);
+        }
+
+        function showConfigStatus(msg, type) {
+            const el = document.getElementById('configStatus');
+            el.textContent = msg;
+            el.style.color = type === 'error' ? 'var(--error)' : type === 'ok' ? 'var(--success)' : 'var(--gray)';
+        }
+
+        async function loadStaff(url) {
+            const grid = document.getElementById('staffGrid');
+            grid.innerHTML = '<p style="color:var(--gray);font-size:14px;text-align:center;padding:40px 0;">Loading staff...</p>';
+
+            try {
+                const res = await fetch(url);
+                const data = await res.json();
+
+                if (!data.success || !data.staff) throw new Error('Could not load staff');
+
+                const active = data.staff.filter(s => s.status === 'Active');
+                grid.innerHTML = active.map(s => buildCard(s)).join('');
+
+            } catch (err) {
+                grid.innerHTML = `<p style="color:var(--error);font-size:14px;text-align:center;padding:40px 0;">
+      Could not load staff. Check your Apps Script URL is correct and deployed as "Anyone".</p>`;
+            }
+        }
+
+        function buildCard(staff) {
+            const initials = staff.name.slice(0, 2).toUpperCase();
+            const hasPhoto = staff.avatarurl && staff.avatarurl.startsWith('http');
+            const urlDisplay = hasPhoto ? staff.avatarurl : 'No photo yet';
+            const id = staff.name.replace(/\s+/g, '_');
+
+            return `
+    <div class="staff-card" id="card_${id}">
+      <div class="avatar-wrap">
+        ${hasPhoto
+                    ? `<img class="avatar" id="av_${id}" src="${staff.avatarurl}" onerror="this.style.display='none';document.getElementById('avf_${id}').style.display='flex'">`
+                    : ''}
+        <div class="avatar-fallback" id="avf_${id}" style="${hasPhoto ? 'display:none' : ''}">${initials}</div>
+        <div class="avatar-edit-btn" onclick="document.getElementById('fi_${id}').click()">✎</div>
+      </div>
+
+      <div class="staff-info">
+        <div class="staff-name">${staff.name}</div>
+        <div class="staff-role">${staff.expertise || 'Specialist'}</div>
+        <div class="url-display ${hasPhoto ? 'has-url' : ''}" id="url_${id}">${hasPhoto ? '✓ ' + staff.avatarurl : 'No photo yet'}</div>
+
+        <div class="upload-area" id="drop_${id}"
+          ondragover="event.preventDefault();this.classList.add('drag-over')"
+          ondragleave="this.classList.remove('drag-over')"
+          ondrop="handleDrop(event,'${id}','${staff.name}')"
+          onclick="document.getElementById('fi_${id}').click()">
+          <div class="upload-icon">📷</div>
+          <p>Click or drag & drop a photo here</p>
+          <img class="preview-img" id="prev_${id}" />
+        </div>
+
+        <input type="file" class="file-input" id="fi_${id}" accept="image/*"
+          onchange="handleFile(this,'${id}','${staff.name}')">
+
+        <div class="progress-bar-wrap" id="prog_wrap_${id}">
+          <div class="progress-bar" id="prog_${id}"></div>
+        </div>
+
+        <div class="status-msg" id="status_${id}"></div>
+
+        <button class="btn-upload" id="btn_${id}" onclick="uploadPhoto('${id}','${staff.name}')">
+          Upload Photo
+        </button>
+      </div>
+    </div>`;
+        }
+
+        function handleDrop(e, id, staffName) {
+            e.preventDefault();
+            document.getElementById('drop_' + id).classList.remove('drag-over');
+            const file = e.dataTransfer.files[0];
+            if (file && file.type.startsWith('image/')) {
+                processFile(file, id, staffName);
+            }
+        }
+
+        function handleFile(input, id, staffName) {
+            const file = input.files[0];
+            if (file) processFile(file, id, staffName);
+        }
+
+        function processFile(file, id, staffName) {
+            // Show preview
+            const prev = document.getElementById('prev_' + id);
+            const reader = new FileReader();
+            reader.onload = e => {
+                prev.src = e.target.result;
+                prev.style.display = 'block';
+            };
+            reader.readAsDataURL(file);
+
+            document.getElementById('btn_' + id).style.display = 'inline-block';
+            document.getElementById('btn_' + id).dataset.file = id;
+            document.getElementById('status_' + id).className = 'status-msg';
+
+            // Store file reference
+            window['_file_' + id] = file;
+        }
+
+        async function uploadPhoto(id, staffName) {
+            const file = window['_file_' + id];
+            if (!file) return;
+
+            const url = localStorage.getItem(STORAGE_KEY);
+            if (!url) { alert('Please save your Apps Script URL first.'); return; }
+
+            const btn = document.getElementById('btn_' + id);
+            const status = document.getElementById('status_' + id);
+            const progWrap = document.getElementById('prog_wrap_' + id);
+            const prog = document.getElementById('prog_' + id);
+
+            btn.disabled = true;
+            btn.textContent = 'Uploading...';
+            progWrap.style.display = 'block';
+            prog.style.width = '30%';
+
+            setStatus(id, 'Uploading photo...', 'loading');
+
+            try {
+                // Convert to base64
+                const base64 = await toBase64(file);
+                prog.style.width = '60%';
+
+                const payload = {
+                    action: 'uploadStaffPhoto',
+                    staffName: staffName,
+                    fileName: file.name,
+                    mimeType: file.type,
+                    base64Data: base64.split(',')[1]
+                };
+
+                prog.style.width = '80%';
+
+                const res = await fetch(url, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'text/plain' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await res.json();
+                prog.style.width = '100%';
+
+                if (result.status === 'success' && result.photoUrl) {
+                    // Update avatar preview
+                    const avImg = document.getElementById('av_' + id);
+                    const avFallback = document.getElementById('avf_' + id);
+
+                    if (avImg) {
+                        avImg.src = result.photoUrl;
+                        avImg.style.display = 'block';
+                        if (avFallback) avFallback.style.display = 'none';
+                    } else {
+                        // Create img element if it didn't exist
+                        const wrap = document.querySelector('#card_' + id + ' .avatar-wrap');
+                        const img = document.createElement('img');
+                        img.className = 'avatar';
+                        img.id = 'av_' + id;
+                        img.src = result.photoUrl;
+                        wrap.insertBefore(img, wrap.firstChild);
+                        if (avFallback) avFallback.style.display = 'none';
+                    }
+
+                    // Update URL display
+                    const urlEl = document.getElementById('url_' + id);
+                    urlEl.textContent = '✓ ' + result.photoUrl;
+                    urlEl.className = 'url-display has-url';
+
+                    setStatus(id, '✓ Photo uploaded and saved to your staff sheet!', 'success');
+                    btn.style.display = 'none';
+                    document.getElementById('prev_' + id).style.display = 'none';
+
+                } else {
+                    throw new Error(result.message || 'Upload failed');
+                }
+
+            } catch (err) {
+                setStatus(id, '✗ ' + err.message, 'error');
+                btn.disabled = false;
+                btn.textContent = 'Try Again';
+            } finally {
+                setTimeout(() => { progWrap.style.display = 'none'; prog.style.width = '0%'; }, 1000);
+            }
+        }
+
+        function setStatus(id, msg, type) {
+            const el = document.getElementById('status_' + id);
+            el.textContent = msg;
+            el.className = 'status-msg ' + type;
+        }
+
+        function toBase64(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = reject;
+                reader.readAsDataURL(file);
+            });
+        }
+
+        // On load
+        window.addEventListener('DOMContentLoaded', () => {
+            const saved = localStorage.getItem(STORAGE_KEY);
+            if (saved) {
+                document.getElementById('scriptUrl').value = saved;
+                showConfigStatus('✓ URL loaded from saved config', 'ok');
+                loadStaff(saved);
+            }
+        });
+    </script>
+</body>
+
+</html>

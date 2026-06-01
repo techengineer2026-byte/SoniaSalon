@@ -1,0 +1,6 @@
+<Files "staff-photo-admin.html">
+  AuthType Basic
+  AuthName "Admin Area"
+  AuthUserFile /home/yourusername/.htpasswd
+  Require valid-user
+</Files>

@@ -1,0 +1,402 @@
+[
+    {
+        "type": "image",
+        "src": "/assets/image/gallery1.jpg",
+        "size": "square",
+        "title": "The Artistry",
+        "subtitle": "Crafted to Perfection",
+        "alt": "Gel X nail art with pink ombre design — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "video",
+        "src": "/assets/Video-347.mp4",
+        "size": "tall",
+        "title": "The Sanctuary",
+        "subtitle": "Step Into Luxury",
+        "alt": "Luxury salon interior tour — Sonia's Beauty Salon & Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery2.jpg",
+        "size": "wide",
+        "title": "The Glow",
+        "subtitle": "Radiant & Renewed",
+        "alt": "Glossy gel manicure with nude finish — Sonia's Salon Lucas Ave Winnipeg"
+    },
+    {
+        "type": "video",
+        "src": "/assets/Video-413.mp4",
+        "size": "tall",
+        "title": "The Ritual",
+        "subtitle": "Pure Indulgence",
+        "alt": "Spa facial treatment in progress — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/2026-02-17.webp",
+        "size": "square",
+        "title": "The Hands",
+        "subtitle": "Expert Touch",
+        "alt": "Nail technician applying gel polish — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery3.png",
+        "size": "square",
+        "title": "The Result",
+        "subtitle": "Confidence Unleashed",
+        "alt": "Happy client after nail transformation — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (1).jfif",
+        "size": "wide",
+        "title": "Velvet Touch",
+        "subtitle": "Where Beauty Begins",
+        "alt": "French tip acrylic nails with glitter accent — Sonia's Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (10).jfif",
+        "size": "wide",
+        "title": "Midnight Glamour",
+        "subtitle": "Pure Indulgence",
+        "alt": "Dark burgundy shellac manicure — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (10).png",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "Where Beauty Begins",
+        "alt": "Classic red gel nails short square shape — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (11).jfif",
+        "size": "tall",
+        "title": "Modern Chic",
+        "subtitle": "Expertly Detailed",
+        "alt": "Full set acrylic nails almond shape nude — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (11).png",
+        "size": "square",
+        "title": "Pure Elegance",
+        "subtitle": "Where Beauty Begins",
+        "alt": "Lash lift and tint results — Sonia's Beauty Salon & Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (12).jfif",
+        "size": "tall",
+        "title": "Pure Elegance",
+        "subtitle": "Radiant & Renewed",
+        "alt": "Volume lash extensions close-up — Sonia's Salon Winnipeg Manitoba"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (12).png",
+        "size": "square",
+        "title": "The Artistry",
+        "subtitle": "Precision Polish",
+        "alt": "Nail art floral design on white gel base — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (13).png",
+        "size": "square",
+        "title": "The Artistry",
+        "subtitle": "Luxury Redefined",
+        "alt": "Chrome powder nail finish mirror effect — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (14).png",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "Crafted to Perfection",
+        "alt": "Gel pedicure with coral polish on toes — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (15).png",
+        "size": "wide",
+        "title": "Timeless Beauty",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Before and after eyebrow threading — Sonia's Beauty Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (16).png",
+        "size": "square",
+        "title": "Modern Chic",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Pink ombre dip powder nails coffin shape — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (17).png",
+        "size": "tall",
+        "title": "Pure Elegance",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Hydrafacial skin treatment glow results — Sonia's Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (18).png",
+        "size": "tall",
+        "title": "Modern Chic",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Classic eyelash extensions natural look — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (19).png",
+        "size": "wide",
+        "title": "The Artistry",
+        "subtitle": "Where Beauty Begins",
+        "alt": "Nail technician doing detailed nail art design — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (2).jfif",
+        "size": "wide",
+        "title": "Salon Magic",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Gel X nails with butterfly nail art design — Sonia's Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (20).png",
+        "size": "square",
+        "title": "Velvet Touch",
+        "subtitle": "Precision Polish",
+        "alt": "Short square white gel manicure clean finish — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (21).png",
+        "size": "wide",
+        "title": "Timeless Beauty",
+        "subtitle": "Where Beauty Begins",
+        "alt": "Full set nail extensions with gold foil art — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (22).png",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "Luxury Redefined",
+        "alt": "Cat eye gel nails dark green shade — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (23).png",
+        "size": "square",
+        "title": "Salon Magic",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Waxing service smooth skin results — Sonia's Beauty Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (24).png",
+        "size": "square",
+        "title": "Velvet Touch",
+        "subtitle": "Precision Polish",
+        "alt": "Almond shaped pink nails with gem accents — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (25).png",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "Precision Polish",
+        "alt": "Gel pedicure spa treatment foot soak — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (26).png",
+        "size": "square",
+        "title": "Velvet Touch",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Russian manicure clean cuticle precision work — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (27).png",
+        "size": "square",
+        "title": "Midnight Glamour",
+        "subtitle": "Precision Polish",
+        "alt": "Black gel nails with silver nail art detail — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (28).png",
+        "size": "square",
+        "title": "Velvet Touch",
+        "subtitle": "Precision Polish",
+        "alt": "Nail extensions stiletto shape with marble art — Sonia's Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (29).png",
+        "size": "wide",
+        "title": "Salon Magic",
+        "subtitle": "Crafted to Perfection",
+        "alt": "Mani pedi combo gel polish hands and feet — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (3).jfif",
+        "size": "square",
+        "title": "Salon Magic",
+        "subtitle": "Radiant & Renewed",
+        "alt": "Deep cleansing facial treatment glowing skin — Sonia's Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (3).png",
+        "size": "square",
+        "title": "The Artistry",
+        "subtitle": "Radiant & Renewed",
+        "alt": "Eyebrow lamination before and after — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (30).png",
+        "size": "wide",
+        "title": "Salon Magic",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Soft gel nail extensions oval shape natural look — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (31).png",
+        "size": "wide",
+        "title": "Modern Chic",
+        "subtitle": "Expertly Detailed",
+        "alt": "Nail art geometric design blue and white — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (32).png",
+        "size": "wide",
+        "title": "Midnight Glamour",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Acrylic nail set long coffin shape glitter — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (33).png",
+        "size": "tall",
+        "title": "Timeless Beauty",
+        "subtitle": "Where Beauty Begins",
+        "alt": "Mega volume lash extensions dramatic look — Sonia's Salon Winnipeg Manitoba"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (34).png",
+        "size": "square",
+        "title": "Midnight Glamour",
+        "subtitle": "Bold & Beautiful",
+        "alt": "Shellac nail polish dark plum colour — Sonia's Salon & Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (4).jfif",
+        "size": "square",
+        "title": "Midnight Glamour",
+        "subtitle": "Precision Polish",
+        "alt": "Gel manicure with nail stamping art — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (4).png",
+        "size": "square",
+        "title": "Midnight Glamour",
+        "subtitle": "A Touch of Glam",
+        "alt": "Rhinestone nail art luxury design — Sonia's Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (5).jfif",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Basic facial treatment clean skin results — Sonia's Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (5).png",
+        "size": "square",
+        "title": "Salon Magic",
+        "subtitle": "A Touch of Glam",
+        "alt": "Hybrid nail manicure gel base with art — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (6).jfif",
+        "size": "square",
+        "title": "Timeless Beauty",
+        "subtitle": "Pure Indulgence",
+        "alt": "Anti-aging facial massage at Sonia's Spa Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (6).png",
+        "size": "square",
+        "title": "Midnight Glamour",
+        "subtitle": "Designed for You",
+        "alt": "Gradient ombre nails peach to white — Sonia's Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (7).jfif",
+        "size": "square",
+        "title": "Modern Chic",
+        "subtitle": "The Ultimate Finish",
+        "alt": "Eyebrow microblading natural brow results — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (7).png",
+        "size": "square",
+        "title": "Modern Chic",
+        "subtitle": "Luxury Redefined",
+        "alt": "Spring nail art pastel floral design — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (8).jfif",
+        "size": "square",
+        "title": "Salon Magic",
+        "subtitle": "Luxury Redefined",
+        "alt": "Wax hair removal smooth legs treatment — Sonia's Beauty Salon Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (8).png",
+        "size": "wide",
+        "title": "Midnight Glamour",
+        "subtitle": "A Touch of Glam",
+        "alt": "Luxury spa pedicure with hot stone massage — Sonia's Salon Winnipeg MB"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/Image (9).jfif",
+        "size": "tall",
+        "title": "Velvet Touch",
+        "subtitle": "Crafted to Perfection",
+        "alt": "Hybrid lash extensions natural wispy look — Sonia's Salon & Spa Winnipeg"
+    },
+    {
+        "type": "image",
+        "src": "/assets/image/gallery/image (9).png",
+        "size": "square",
+        "title": "Salon Magic",
+        "subtitle": "Luxury Redefined",
+        "alt": "Gel nail removal and new set application — Sonia's Beauty Salon Winnipeg"
+    }
+]

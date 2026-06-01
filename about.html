@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- FIXED: weak title → keyword + location added -->
+  <title>About Sonia's Beauty Salon & Spa | Winnipeg Beauty Expert</title>
+
+  <!-- ADDED: missing meta description -->
+  <meta name="description"
+    content="Learn about Sonia's Beauty Salon & Spa in Winnipeg — founded by Master Esthetician Sonia with 12+ years of experience in nail extensions, lash lifts, facials & more.">
+
+  <!-- ADDED: missing robots tag -->
+  <meta name="robots" content="index, follow">
+
+  <!-- ADDED: missing canonical — prevents duplicate URL issues -->
+  <link rel="canonical" href="https://www.soniabeautysalon.ca/about">
+
+  <!-- ADDED: Open Graph for social sharing -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://www.soniabeautysalon.ca/about">
+  <meta property="og:title" content="About Sonia's Beauty Salon & Spa | Winnipeg">
+  <meta property="og:description"
+    content="Meet Sonia — Master Esthetician & founder with 12+ years of excellence. Winnipeg's premium beauty salon for nail extensions, lash lifts & facials.">
+  <meta property="og:image" content="https://www.soniabeautysalon.ca/assets/image/og-image.jpg">
+  <meta property="og:site_name" content="Sonia's Beauty Salon & Spa">
+  <meta property="og:locale" content="en_CA">
+
+  <!-- ADDED: Person schema — tells Google who Sonia is (AEO) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AboutPage",
+    "url": "https://www.soniabeautysalon.ca/about",
+    "name": "About Sonia's Beauty Salon & Spa",
+    "description": "Learn about Sonia's Beauty Salon & Spa in Winnipeg, founded by Master Esthetician Sonia with over 12 years of experience.",
+    "mainEntity": {
+      "@type": "BeautySalon",
+      "name": "Sonia's Beauty Salon & Spa",
+      "founder": {
+        "@type": "Person",
+        "name": "Sonia",
+        "jobTitle": "Master Esthetician & Founder",
+        "worksFor": {
+          "@type": "BeautySalon",
+          "name": "Sonia's Beauty Salon & Spa"
+        }
+      }
+    }
+  }
+  </script>
+
+  <!-- ADDED: preconnects for faster font load (Core Web Vitals) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://cdn.jsdelivr.net">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <!-- ADDED: extra favicon sizes for mobile/Apple devices -->
+  <link rel="icon" href="/assets/image/favicon-32x32.png" sizes="32x32" type="image/png">
+  <link rel="apple-touch-icon" href="/assets/image/apple-touch-icon.png">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;600&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<body>
+  <div id="loader-wrapper">
+    <div class="loader-content">
+      <div class="logo-container">
+        <!-- FIXED: alt text too generic → descriptive -->
+        <img src="/assets/image/logowehite.webp" alt="Sonia's Beauty Salon and Spa logo" class="loader-logo-img"
+          width="200" height="80">
+        <div class="logo-glow"></div>
+      </div>
+      <div class="loader-status">
+        <span class="loader-brand">SONIA'S</span>
+        <div class="loader-line-container">
+          <div class="loader-line-fill"></div>
+        </div>
+        <span class="loader-msg">Preparing Your Beauty Experience</span>
+      </div>
+    </div>
+  </div>
+
+  <header class="luxury-header">
+    <div class="container d-flex justify-content-between align-items-center">
+
+      <!-- FIXED: aria-label added to logo link -->
+      <a class="navbar-brand d-flex align-items-center" href="/" aria-label="Sonia's Beauty Salon & Spa - Home">
+        <!-- FIXED: alt text improved + width/height for layout shift -->
+        <img src="/assets/image/icon.webp" alt="Sonia's Beauty Salon & Spa logo" class="logo-img" width="50"
+          height="50">
+        <div class="brand-text ms-3">
+          <span class="brand-name">SONIA'S</span>
+          <span class="brand-sub">Beauty Salon & Spa</span>
+        </div>
+      </a>
+
+      <!-- FIXED: aria-label added to nav -->
+      <nav class="desktop-nav d-none d-lg-flex align-items-center" aria-label="Main navigation">
+        <a class="nav-link" href="/">Home</a>
+        <a class="nav-link active" href="/about" aria-current="page">About</a>
+        <a class="nav-link" href="/gallery">Gallery</a>
+        <a class="nav-link" href="/contact">Contact</a>
+        <a href="/book-now" class="btn booknow-btn ms-4">Book Now</a>
+      </nav>
+
+      <!-- FIXED: aria-expanded added for accessibility -->
+      <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="mobileOverlay">
+        <span class="line"></span>
+        <span class="line"></span>
+        <span class="line"></span>
+      </button>
+    </div>
+
+    <!-- FIXED: role + aria-label added -->
+    <div class="mobile-overlay" id="mobileOverlay" role="navigation" aria-label="Mobile navigation">
+      <ul class="mobile-nav-list">
+        <li><a href="/">Home</a></li>
+        <li><a href="/about">About</a></li>
+        <li><a href="/contact">Contact</a></li>
+        <li><a href="/book-now" class="btn booknow-btn">Book Now</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <main>
+    <!-- FIXED: aria-label added to section -->
+    <section class="about-hero-lux" aria-label="About Sonia's Beauty Salon Winnipeg">
+      <div class="hero-video-wrap">
+        <!-- FIXED: title + aria-label added to video for accessibility/SEO -->
+        <video autoplay muted loop playsinline class="hero-video-bg" aria-label="Sonia's Beauty Salon ambiance video"
+          title="Sonia's Beauty Salon & Spa Winnipeg">
+          <source src="/assets/about-us.mp4" type="video/mp4">
+        </video>
+        <div class="hero-video-overlay" role="presentation"></div>
+      </div>
+
+      <div class="container position-relative">
+        <div class="hero-content-center">
+          <span class="hero-tag animate-on-scroll">Est. 2026 · Winnipeg, MB</span>
+          <!-- FIXED: H1 now has location keyword for SEO -->
+          <h1 class="hero-title-lux shimmer-text animate-on-scroll">
+            A Sanctuary of<br>Elegance in Winnipeg
+          </h1>
+          <div class="hero-line mx-auto animate-on-scroll"></div>
+          <p class="hero-subtitle animate-on-scroll">
+            Where luxury meets artistry. Where you become the masterpiece.
+          </p>
+        </div>
+      </div>
+
+      <div class="scroll-down" aria-hidden="true">
+        <span class="scroll-text">Discover More</span>
+        <div class="scroll-bar"></div>
+      </div>
+    </section>
+
+    <section class="welcome-minimal py-100" aria-label="Welcome to Sonia's salon">
+      <div class="container">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <span class="hero-tag animate-on-scroll">Welcome to Sonia's</span>
+            <h2 class="shimmer-text display-4 font-playfair mb-4 animate-on-scroll">
+              More Than a Salon
+            </h2>
+            <p class="welcome-text animate-on-scroll">
+              We are a sanctuary of elegance in Winnipeg, specializing in high-end beauty treatments.
+              This is not just a place to get pampered —
+              it's where your natural beauty reaches its fullest potential.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="story-values-sec py-100" aria-label="Our story and philosophy">
+      <div class="container">
+        <div class="row g-4">
+          <div class="col-lg-6">
+            <div class="value-card animate-on-scroll">
+              <div class="value-image">
+                <!-- FIXED: alt text generic → descriptive with keyword -->
+                <img src="/assets/image/room.jfif" alt="Interior of Sonia's Beauty Salon Winnipeg" loading="lazy"
+                  width="600" height="400">
+              </div>
+              <div class="value-content">
+                <h3 class="value-title">Our Story</h3>
+                <p class="value-text">
+                  Born from a passion for artistry and style, Sonia's was envisioned as a space
+                  where every individual could experience superior care, tranquility, and rejuvenation.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="value-card animate-on-scroll">
+              <div class="value-image">
+                <!-- FIXED: alt text generic → descriptive with keyword -->
+                <img src="/assets/image/beautytreatment.webp"
+                  alt="Professional beauty treatment at Sonia's Spa Winnipeg" loading="lazy" width="600" height="400">
+              </div>
+              <div class="value-content">
+                <h3 class="value-title">Our Philosophy</h3>
+                <p class="value-text">
+                  Every person is unique and deserves to be treated as such. We enhance your
+                  individuality, bring out your inner confidence, and celebrate your style.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-cta-sec" aria-label="Book an appointment">
+      <div class="cta-bg-overlay" role="presentation"></div>
+      <div class="container position-relative">
+        <div class="row justify-content-center">
+          <div class="col-lg-8 text-center">
+            <h2 class="cta-title shimmer-text animate-on-scroll">Ready to Experience Luxury?</h2>
+            <p class="cta-text animate-on-scroll">
+              Your transformation begins with a single appointment. Let us show you
+              what true elegance feels like.
+            </p>
+            <div class="cta-buttons animate-on-scroll">
+              <a href="/book-now" class="btn-premium"
+                aria-label="Book a beauty appointment at Sonia's Salon Winnipeg"><span>Book Now</span></a>
+              <a href="/contact" class="btn-link-lux">Or Contact Us</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="luxury-footer" aria-label="Footer">
+    <div class="container">
+      <div class="footer-main">
+        <div class="footer-brand-section">
+          <h3 class="footer-logo">SONIA'S</h3>
+          <!-- FIXED: keyword-rich tagline -->
+          <p class="footer-tagline">Nail extensions, lash lifts & facials in Winnipeg, MB.</p>
+          <div class="footer-social-links">
+            <!-- FIXED: rel="noopener noreferrer" added to all external links -->
+            <a href="https://www.instagram.com/soniasbeautysalonandspa/" target="_blank" rel="noopener noreferrer"
+              aria-label="Sonia's Beauty Salon on Instagram">
+              <i class="bi bi-instagram" aria-hidden="true"></i>
+            </a>
+            <a href="https://www.facebook.com/p/Sonias-Beauty-Salon-and-Spa-61578722960860/" target="_blank"
+              rel="noopener noreferrer" aria-label="Sonia's Beauty Salon on Facebook">
+              <i class="bi bi-facebook" aria-hidden="true"></i>
+            </a>
+            <a href="https://wa.me/14319771222" target="_blank" rel="noopener noreferrer" class="whatsapp-btn"
+              aria-label="Contact Sonia's on WhatsApp">
+              <i class="bi bi-whatsapp" aria-hidden="true"></i>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer-columns">
+          <div class="footer-column">
+            <button class="footer-toggle" onclick="toggleFooterSection(this)" aria-expanded="false">
+              <span class="footer-heading">Quick Links</span>
+              <i class="bi bi-chevron-down toggle-icon" aria-hidden="true"></i>
+            </button>
+            <div class="footer-content">
+              <ul class="footer-menu">
+                <li><a href="/">Home</a></li>
+                <li><a href="/about">About</a></li>
+                <li><a href="/gallery">Gallery</a></li>
+                <li><a href="/book-now">Book Now</a></li>
+                <li><a href="/contact">Contact</a></li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <button class="footer-toggle" onclick="toggleFooterSection(this)" aria-expanded="false">
+              <span class="footer-heading">Salon Hours</span>
+              <i class="bi bi-chevron-down toggle-icon" aria-hidden="true"></i>
+            </button>
+            <div class="footer-content">
+              <div class="footer-hours-block">
+                <div class="hours-row">
+                  <span class="day">Mon - Sat</span>
+                  <span>11:00 AM - 8:00 PM</span>
+                </div>
+                <div class="hours-row">
+                  <span class="day">Sunday</span>
+                  <span>12:00 PM - 5:00 PM</span>
+                </div>
+                <p class="open-status">Open 7 Days a Week</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="footer-column">
+            <button class="footer-toggle" onclick="toggleFooterSection(this)" aria-expanded="false">
+              <span class="footer-heading">Get In Touch</span>
+              <i class="bi bi-chevron-down toggle-icon" aria-hidden="true"></i>
+            </button>
+            <div class="footer-content">
+              <!-- FIXED: address tag wrapping contact info -->
+              <address>
+                <ul class="footer-contact">
+                  <li>
+                    <i class="bi bi-geo-alt" aria-hidden="true"></i>
+                    <span>205 Lucas Ave #122<br>Winnipeg, MB R2R 2S9</span>
+                  </li>
+                  <li>
+                    <i class="bi bi-telephone" aria-hidden="true"></i>
+                    <a href="tel:+14319771222">+1 (431) 977-1222</a>
+                  </li>
+                  <li>
+                    <i class="bi bi-envelope" aria-hidden="true"></i>
+                    <a href="mailto:soniasbeautysalon.Winnipeg@gmail.com">soniasbeautysalon.Winnipeg@gmail.com</a>
+                  </li>
+                </ul>
+              </address>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div class="footer-credits">
+          <p>&copy; 2025 Sonia's Beauty Salon & Spa</p>
+          <p class="rights-text">All Rights Reserved</p>
+        </div>
+        <div class="footer-logo-small">
+          <!-- FIXED: alt text + width/height added -->
+          <img src="/assets/image/logowehite.webp" alt="Sonia's Beauty Salon logo" loading="lazy" width="80"
+            height="32">
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+  <script src="/assets/js/script.js"></script>
+</body>
+
+</html>
